@@ -1,0 +1,68 @@
+
+/*document.addEventListener('DOMContentLoaded', function() {
+// Sélectionnez le bouton et la navigation
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function() {
+            // Bascule la classe 'open' sur la navigation
+            mainNav.classList.toggle('open');
+            
+            // OPTIONNEL : Changer le symbole de l'icône (Hamburger ↔ Fermer)
+            if (mainNav.classList.contains('open')) {
+                menuToggle.innerHTML = '&#10005;'; // Symbole X
+            } else {
+                menuToggle.innerHTML = '&#9776;'; // Symbole Hamburger
+            }
+        });
+    }
+});*/
+let slideIndex = 1;
+// Fonction pour afficher la diapositive actuelle
+function showSlides() {
+    let slides = document.getElementsByClassName("mySlides");
+    
+    // Déterminer l'index du slide précédent
+    let prevIndex = slideIndex - 1;
+    if (prevIndex === 0) {
+        prevIndex = slides.length; // Si c'était le premier, le précédent est le dernier
+    }
+
+    // 1. Cacher toutes les diapositives
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].classList.remove('slide-active', 'slide-in', 'slide-out');
+        slides[i].style.display = "none";
+    }
+
+    // 2. Avancer l'index
+    slideIndex++;
+    if (slideIndex > slides.length) {
+        slideIndex = 1; // Revenir à la première image
+    }
+
+    // --- APPLICATION DES CLASSES D'ANIMATION ---
+
+    // Le slide précédent (celui qui sort)
+    // Nous le rendons visible temporairement pour qu'il puisse glisser
+    slides[prevIndex - 1].style.display = "block"; 
+    slides[prevIndex - 1].classList.add('slide-in'); // Démarre le mouvement de sortie (gauche)
+
+    // Le slide actuel (celui qui entre)
+    slides[slideIndex - 1].style.display = "block";
+    slides[slideIndex - 1].classList.add('slide-out'); // Démarre le mouvement d'entrée (droite)
+
+    // Rappeler la fonction après 7 secondes
+    setTimeout(showSlides, 10000); 
+}
+
+// Initialisation : Afficher la première image sans animation au chargement
+document.addEventListener('DOMContentLoaded', function() {
+    let slides = document.getElementsByClassName("mySlides");
+    if (slides.length > 1) {
+        slides[1].style.display = "block";
+        slides[1].classList.add('slide-active');
+    }
+    // Lancer le diaporama après une courte pause
+    setTimeout(showSlides, 10000);
+});

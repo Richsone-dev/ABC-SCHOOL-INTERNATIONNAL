@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABC SCHOOL INTERNATIONNAL</title>
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <script src="scripts/script,js"></script>
+</head>
+<body>
+
+    <header>
+        <div class="LOGO">
+            <img src="images/ABC LOGO1.png" alt="Le logo de ABC">
+            <div class="logo-container">
+                <div class="logo">ABC SCHOOL INTERNATIONNAL</div>
+                <span>CHILDREN'S AID</span>
+            </div>
+        </div>
+        
+        <nav>
+            <ul>
+                <li><a href="#accueil"><i class="fa-solid fa-house"></i>Accueil</a></li>
+                <li><a href="#presentation"><i class="fa-solid fa-circle-info"></i>Présentation</a></li>
+                <li><a href="#niveaux"><i class="fa-solid fa-graduation-cap"></i>Niveaux</a></li>
+                <li><a href="#actualites"><i class="fa-solid fa-newspaper"></i>Actualités</a></li>
+                <li><a href="#contact"><i class="fa-solid fa-envelope"></i>Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="marquee-container">
+        <p class="marquee-text">
+        Salut! Nous vous souhaitons la cordiale Bienvenue sur la plateforme
+         de ABC SCHOOL INTERNATIONNAL. Rassurez-vous car nous mettons à 
+         votre disposition des services non seulement <strong>ACADEMIQUES</strong>
+          mais aussi <strong>ARTISTIQUES</strong> et <strong>SPORTIFES</strong>, dans toutes
+             mésures de vous satisfaire. 
+        </p>
+    </div>
+    
+    <main>
+        <section id="accueil" class="hero">
+            <div class="slideshow-container">
+                <div class="mySlides fade">
+                    <img src="images/eleves1.jpg" alt="Vue de l'école">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="images/batiment.jpg" alt="Activités scolaires">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="images/eleves2.jpg" alt="Salle de classe">
+                </div>
+
+                <div class="mySlides fade">
+                    <img src="images/eleves1.jpg" alt="Salle de classe">
+                </div>
+                <div class="mySlides fade">
+                    <img src="images/eleves3.jpg" alt="Salle de classe">
+                </div>
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1>Bienvenue à ABC SCHOOL INTERNATIONNAL!</h1>
+                        <p>Former l'élite de demain, de la maternelle au lycée.</p>
+                        <a href="#contact" class="btn">Inscrivez-vous maintenant</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="presentation">
+            <h2>Notre Mission et Nos Valeurs</h2>
+            <div class="card-container">
+                <div class="card">
+                    <h3>🎓 Éducation de Qualité</h3>
+                    <img class="card-img" src="images/batiment.jpg" alt="">
+                    <p>Un programme complet et des enseignants dévoués.</p>
+                </div>
+                <div class="card">
+                    <h3>🤝 Environnement Bienveillant</h3>
+                    <img class="card-img" src="images/batiment.jpg" alt="">
+                    <p>Un cadre sécurisé et stimulant pour l'épanouissement.</p>
+                </div>
+                <div class="card">
+                    <h3>🌐 Ouverture sur le Monde</h3>
+                    <img class="card-img" src="images/batiment.jpg" alt="">
+                    <p>Activités parascolaires et apprentissage des langues.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="niveaux" class="alt-bg">
+            <h2>Nos Cycles d'Enseignement</h2>
+            <ul>
+                <a href="#maternelle"><img class="cycle-img" src="images/eleves1.jpg" alt=""><li>Maternelle (3 à 5 ans)</li></a>
+                <a href="#primaire"><img class="cycle-img" src="images/eleves3.jpg" alt=""><li>Primaire (CP au CM2)</li></a>
+                <a href="#secondaire"><img class="cycle-img" src="images/eleves2.jpg" alt=""><li>Secondaire/Collège <br> (6<sup>e</sup>-3<sup>e</sup>)</li></a>
+                <a href="#lycee"><img class="cycle-img" src="images/batiment.jpg" alt=""><li>Lycée (2<sup>nde</sup>-Tle)</li></a>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>Contactez-Nous</h2>
+            <form action="#" method="POST">
+                <label for="nom">Nom Complet :</label>
+                <input type="text" id="nom" name="nom" required>
+
+                <label for="email">E-mail :</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message :</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit" class="btn">Envoyer</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p><i class="fa-solid fa-location-dot"></i> Rue 32 de Bobo-Dioulasso | <i class="fa-solid fa-phone"></i> +226 65 39 55 14</p>
+        <p>&copy; 2025 ABC SCHOOL INTERNATIONNAL. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

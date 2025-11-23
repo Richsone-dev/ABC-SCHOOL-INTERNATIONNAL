@@ -1,0 +1,119 @@
+Couleur	Code Hexadécimal	Nom Approximatif	Utilisation Typique
+Bleu Clair	#93C6DE	Bleu Ciel Pâle	Lettres 'a', 'b', 'c', et l'extérieur du cœur/croix
+Bleu Foncé	#1C3B7F	Bleu Marine Profond	La croix (le "X")
+Rouge	#E84F4F	Rouge Corail/Vif	L'intérieur du cœur
+
+
+=======================MENU BURGEUR==============================
+---------------------------------------LE HTML---------------------------------------------------
+<header>
+    <div class="LOGO">
+        <img src="images/ABC LOGO1.png" alt="Le logo de ABC">
+        <div class="logo-container">
+            <div class="logo">ABC SCHOOL INTERNATIONNAL</div>
+            <span>CHILDREN'S AID</span>
+        </div>
+    </div>
+    
+    <button class="menu-toggle" id="menu-toggle">
+        &#9776; </button>
+    
+    <nav id="main-nav">
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            </ul>
+    </nav>
+</header>
+----------------------------------------LE CSS----------------------
+
+/* --- NOUVEAU : BOUTON HAMBURGER --- */
+.menu-toggle {
+    display: none; /* Caché par défaut (sur grand écran) */
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001; /* Doit être au-dessus de tout */
+}
+
+/* --- MEDIA QUERIES (Adaptation mobile) --- */
+@media (max-width: 768px) {
+    /* 🔑 1. AFFICHER L'ICÔNE HAMBURGER */
+    .menu-toggle {
+        display: block; /* Affiché sur mobile */
+    }
+
+    /* 🔑 2. CHANGER LA DISPOSITION DU HEADER */
+    header {
+        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
+        /* Justification pour séparer le logo et le bouton */
+        justify-content: space-between; 
+    }
+    
+    /* 🔑 3. MASQUER LE MENU PAR DÉFAUT ET LE STYLER POUR MOBILE */
+    #main-nav {
+        /* Le menu prend toute la largeur du header */
+        width: 100%; 
+        /* Cacher le menu par défaut sur mobile (JS le fera apparaître/disparaître) */
+        display: none; 
+        /* S'assurer qu'il est sous le logo/hamburger */
+        order: 10; 
+        
+        background-color: #1C3B7F; /* Fond pour la navigation */
+        padding: 10px 0;
+        box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Le menu visible lorsque le JS ajoute la classe 'open' */
+    #main-nav.open {
+        display: block; 
+    }
+
+    /* Styliser la liste pour un menu vertical mobile */
+    #main-nav ul {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    #main-nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+    
+    #main-nav ul li a {
+        display: block; /* Prend toute la largeur de l'élément parent */
+        padding: 15px 10px;
+    }
+
+    /* ... Gardez vos autres media queries ... */
+}*/
+
+-----------------------------------LR JS--------------------------------
+// --- GESTION DU MENU HAMBURGER (Ajouter au script existant) ---
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Sélectionnez le bouton et la navigation
+    const menuToggle = document.getElementById('menu-toggle');
+    const mainNav = document.getElementById('main-nav');
+    
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function() {
+            // Bascule la classe 'open' sur la navigation
+            mainNav.classList.toggle('open');
+            
+            // OPTIONNEL : Changer le symbole de l'icône (Hamburger ↔ Fermer)
+            if (mainNav.classList.contains('open')) {
+                menuToggle.innerHTML = '&#10005;'; // Symbole X
+            } else {
+                menuToggle.innerHTML = '&#9776;'; // Symbole Hamburger
+            }
+        });
+    }
+
+    // --- (Votre code pour le diaporama et le formulaire doit suivre ici) ---
+    // ...
+});
+
+webcam360.org
