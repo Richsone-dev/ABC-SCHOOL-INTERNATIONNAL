@@ -59,14 +59,14 @@ header {
 }
 
 .logo {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
 }
 
 /* Bouton Hamburger (caché sur PC) */
 .menu-toggle {
     display: none;
-    font-size: 1.4rem;
+    font-size: 1rem;
     cursor: pointer;
     padding: 2px 2px;
 }
@@ -270,16 +270,19 @@ h1, h2{
 }
 
 .card h3 {
-    color: #004d99;
+    color: #ccc;
 }
 
 .cycle-img{
-    background-color: #007acc;
+    background-color: #e6f0ff;
     display: block;
     margin-bottom: 5px;
     padding: 8px;
     border-radius: 8px;
     max-width: 100%;
+    transition: transform 0.3s ease;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 .cycle-img:hover {
@@ -305,7 +308,7 @@ h1, h2{
     font-weight: bold;
     transition: all 0.3s ease-in-out; 
     position: relative;
-    background-color: #007acc;
+    background-color: #e6f0ff;
 }
 
 #niveaux a {
