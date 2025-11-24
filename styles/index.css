@@ -53,23 +53,22 @@ header {
 }
 
 .logo-container span {
-    display: block;
-    text-align: left;
+    text-align: center;
     font-size: 10px;
-    letter-spacing: 5px; /* Amélioré */
+    letter-spacing: 10px; /* Amélioré */
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     font-weight: bold;
 }
 
 /* Bouton Hamburger (caché sur PC) */
 .menu-toggle {
     display: none;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 2px 2px;
 }
 
 nav ul {
