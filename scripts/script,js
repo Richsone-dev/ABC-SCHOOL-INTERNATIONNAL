@@ -18,6 +18,41 @@
         });
     }
 });*/
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Référence aux éléments
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    if (menuToggle && mainNav) {
+        // 1. Gérer l'ouverture/fermeture du menu au clic du bouton
+        menuToggle.addEventListener('click', function() {
+            // Ajoute/retire la classe 'active' sur la balise <nav>
+            mainNav.classList.toggle('active');
+        });
+
+        // 2. Gérer la fermeture du menu lorsque l'utilisateur clique sur un lien (pour un menu ancré)
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                // Fermer le menu si la classe 'active' est présente (sur mobile)
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+    }
+    
+    // Ajoutez ici la fonction pour le diaporama (slideshow) si vous en avez une
+    
+});
+
+
+
+
+
 let slideIndex = 1;
 // Fonction pour afficher la diapositive actuelle
 function showSlides() {

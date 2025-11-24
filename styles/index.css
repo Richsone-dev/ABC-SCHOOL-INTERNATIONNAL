@@ -1,6 +1,5 @@
 /* Réinitialisation de base */
 * {
-    /* Ajout du box-sizing pour simplifier le layout */
     box-sizing: border-box;
 }
 
@@ -13,9 +12,14 @@ body {
     color: #333;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* --- HEADER / NAVIGATION --- */
 header {
-    background-color: #1C3B7F; /* Bleu foncé pour l'école */
+    background-color: #1C3B7F;
     color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -30,7 +34,7 @@ header {
 .LOGO{
     display: flex;
     flex-direction: row;
-    align-items: center; /* Centre verticalement le logo et le texte */
+    align-items: center;
 }
 
 .LOGO img{
@@ -44,17 +48,15 @@ header {
 .logo-container {
     display: flex; 
     flex-direction: column; 
-    align-items: center; /* Aligne le logo et le span à gauche */
+    align-items: flex-start; /* Aligne le logo et le span à gauche */
     justify-content: center; 
-    height: 100px; 
 }
 
 .logo-container span {
-    display: flex;
-    flex-direction: column;
-    text-align: center; /* Aligner à gauche pour plus de clarté */
+    display: block;
+    text-align: left;
     font-size: 10px;
-    letter-spacing: 15px; /* Réduit l'espacement pour la lisibilité */
+    letter-spacing: 5px; /* Amélioré */
 }
 
 .logo {
@@ -62,13 +64,19 @@ header {
     font-weight: bold;
 }
 
-
+/* Bouton Hamburger (caché sur PC) */
+.menu-toggle {
+    display: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px 10px;
+}
 
 nav ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex;
+    display: flex; /* Horizontal sur PC */
 }
 
 nav ul li {
@@ -81,64 +89,46 @@ nav ul li a {
     padding: 0.5rem 1rem;
     border-radius: 5px;
     border-bottom: 2px solid #007acc;
-    justify-content: space-between;
     transition: border-bottom 0.3s;
+    display: block;
 }
+
 nav ul li i{
     margin-right: 5px;
-    margin-left: 0;
-    border-radius: 50%;
     color: #f4f4f9;
-    /*border: 1px solid #f4f4f9;*/
-    /*padding: 5px;*/
 }
 
 nav ul li a:hover {
     background-color: #007acc;
-    /*background: linear-gradient(to right, red, #007acc, #004d99,#ece807);*/
-    background-position: 100% 0 0 0;
     transition: background-color 0.4s ease-in-out;
 }
 
 /* --- NOUVEAUX STYLES MARQUEE --- */
-
 .marquee-container {
     width: 100%;
     overflow: hidden; 
     white-space: nowrap; 
-    box-sizing: border-box; 
     padding: 10px 0;
-    font-size: 12px;
-    height: 30px;
-    /* Styles pour la barre visible */
-    background-color: #ffff; /* Utilisez la couleur orange de votre bouton */
+    font-size: 14px; /* Augmenté légèrement pour la lisibilité */
+    height: 40px;
+    background-color: #ffff;
     color: black;
-    text-align: left; /* Le texte défilant n'a pas besoin d'être centré */
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
-    
-    /* Positionnement au-dessus de la section #accueil */
     position: relative; 
-    z-index: 999; /* Moins que le header (1000) mais plus que le contenu (pour le cas où le header n'est pas sticky) */
+    z-index: 999;
 }
 
 .marquee-text {
     display: inline-block; 
     padding-left: 100%; 
     margin: 0;
-    align-items: center;
-    justify-content: center;
-    
-    /* Animation (Ajustez la durée pour changer la vitesse) */
     animation: defilement 60s linear infinite; 
+    line-height: 20px; /* Aligne le texte au centre verticalement */
 }
 
 @keyframes defilement {
-    0% {
-        transform: translateX(0); 
-    }
-    100% {
-        transform: translateX(-100%); 
-    }
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
 }
 
 
@@ -153,44 +143,36 @@ section {
 }
 
 h1, h2{
-    /* Suppression du color: #ffffff; global. Le H1 sera blanc dans la section hero uniquement. */
-    color: #1C3B7F; /* Couleur standard pour les titres en dehors du Hero */
+    color: #1C3B7F;
     margin-bottom: 20px;
 }
 
 /* --- SECTION HERO (Accueil) et DIAPORAMA --- */
 .hero {
-    /* La hauteur est indispensable pour l'effet diaporama */
     min-height: 500px; 
-    position: relative; /* Conteneur de référence pour les images absolues */
+    position: relative; 
     overflow: hidden;
-    color: #1C3B7F; /* Couleur du texte par défaut */
-    display: flex; /* Pour centrer le hero-content */
+    color: #1C3B7F;
+    display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0; /* Retrait du padding car la hauteur est définie par min-height */
+    padding: 0;
 }
 
-/* Contenu du Hero (texte et bouton) */
 .hero-content {
-    /* Positionnement et Z-index pour être AU-DESSUS des images */
     z-index: 20; 
-    position: relative;
+    position: absolute; /* Rendu absolu pour flotter au-dessus du diaporama */
     /* Styles du bloc de texte */
-    /*background-color: rgba(0, 0, 0, 0.5); /* Opacité pour la lisibilité */
     padding: 30px;
-    max-width: 800px; /* Augmenté légèrement pour un meilleur rendu */
+    max-width: 800px;
     border-radius: 10px;
     text-shadow: #1C3B7F 2px 2px 2px;
-    /*border: 1px solid #007acc;
-    
-    /* Le texte dans le hero-content doit être blanc */
     color: #ffff;
 }
+
 .hero-content h1 {
     font-size: 2.5rem;
-    color: #ffff; /* Assure que le titre est blanc sur le fond sombre */
-    /* Suppression du background-color sur h1 pour ne pas masquer le fond semi-transparent */
+    color: #ffff;
     background-color: transparent;
     text-shadow: #1C3B7F 3px 3px 2px; 
 }
@@ -208,8 +190,7 @@ h1, h2{
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
-    transition: transform 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -217,7 +198,7 @@ h1, h2{
     background-color: #004d99;
     transform: translateY(-5px);
 }
-/* Conteneur des images du diaporama */
+
 .slideshow-container {
     width: 100%;
     height: 100%;
@@ -226,9 +207,8 @@ h1, h2{
     left: 0;
 }
 
-/* Chaque image du diaporama (géré par JS) */
 .mySlides {
-    display: none; /* Cacher par défaut (JS affichera) */
+    display: none;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -237,16 +217,10 @@ h1, h2{
 .mySlides img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Assure que l'image couvre toute la zone sans déformation */
+    object-fit: cover;
     object-position: center;
 }
 
-
-/* Suppression du sélecteur .hero-content::before car il tentait de créer un dégradé 
-   qui était masqué par le contenu lui-même. La couleur de fond sur le hero-content est suffisante. */
-
-
-/* Keyframes pour l'effet de transition */
 .fade {
     animation-name: fade;
     animation-duration: 2s;
@@ -258,10 +232,6 @@ h1, h2{
 }
 
 
-
-#presentation{
-    background-color: #e6f0ff;
-}
 /* --- CARTES DE PRÉSENTATION --- */
 .card-container {
     display: flex;
@@ -276,31 +246,20 @@ h1, h2{
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 250px;
+    max-width: 300px; /* Augmenté légèrement */
     text-align: left;
-    transition: transform 0.3s ease; /* Ajout d'une transition pour le survol */
-    transition: max-width 0.5s ease-in-out;
+    transition: transform 0.3s ease;
 }
+
 .card:hover {
-    max-width: 400px;
-    transform: translateY(-5px); /* Légère élévation au survol */
+    transform: translateY(-5px);
 }
 
 .card-img{
     background-color: white;
-    display: grid;
-    margin-left: -20px;
     padding: 2px;
     border-radius: 8px;
-    max-width: 250px;
     text-align: left;
-    /*transition: transform 0.5s ease; /* Ajout d'une transition pour le survol */
-    transition: max-width 0.5s ease-in-out;*/
-}
-.card-img:hover {
-    max-width: 400px;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /*transform: translateY(-5px); /* Légère élévation au survol */
 }
 
 .card h3 {
@@ -309,27 +268,17 @@ h1, h2{
 
 .cycle-img{
     background-color: #007acc;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: -20px;
+    display: block;
+    margin-bottom: 5px;
     padding: 8px;
     border-radius: 8px;
-    max-width: 200px;
-    text-align: left;
-    transition: transform 0.3s ease; /* Ajout d'une transition pour le survol */
-    transition: max-width 0.5s ease-in-out;
+    max-width: 100%;
+    transition: transform 0.3s ease;
 }
 .cycle-img:hover {
-    max-width: 400px;
-     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px); /* Légère élévation au survol */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
 }
-
-
-/* Le sélecteur .card .maternelle ne correspondait à rien dans votre HTML. 
-   Si vous vouliez styliser la card qui parle de la maternelle, 
-   vous devriez ajouter une classe sur la DIV CARD (ex: class="card maternelle-card"). */
 
 
 /* --- LISTES DE NIVEAUX --- */
@@ -342,17 +291,21 @@ h1, h2{
     flex-wrap: wrap;
 }
 
-/* Ajout des styles manquants pour les LI et A */
 #niveaux ul li {
     background-color: white;
-    padding: 10px 20px;
     margin: 5px 0;
-    /*border: 1px solid #ccc;*/
     border-radius: 5px;
     font-weight: bold;
     transition: all 0.3s ease-in-out; 
-    position: relative; /* Pour l'effet hover */
+    position: relative;
     background-color: #007acc;
+}
+
+#niveaux a {
+    text-decoration: none;
+    color: #ffff;
+    display: block;
+    padding: 10px 20px;
 }
 
 #niveaux ul li:hover {
@@ -361,23 +314,7 @@ h1, h2{
     background-color: #1C3B7F;
 }
 
-#niveaux a {
-    text-decoration: none;
-    color: #ffff;
-    /* Rendre le lien block pour qu'il prenne toute la zone du LI (meilleure cliquabilité) */
-    display: block; 
-}
-
-/* Suppression des styles .niveaux:hover inutilisés puisque les styles sont maintenant sur #niveaux ul li:hover */
-
-
 /* --- FORMULAIRE DE CONTACT --- */
-form h3{
-    /* Suppression du color: #ffffff; global. Le H1 sera blanc dans la section hero uniquement. */
-    color: #007acc; /* Couleur standard pour les titres en dehors du Hero */
-    margin-bottom: 20px;
-    text-align: center;
-}
 #contact form {
     max-width: 600px;
     margin: 0 auto;
@@ -393,7 +330,7 @@ form h3{
     margin-top: 15px;
     margin-bottom: 5px;
     font-weight: bold;
-    color: #1C3B7F; /* Couleur de label en bleu */
+    color: #1C3B7F;
 }
 
 #contact input[type="text"],
@@ -425,66 +362,85 @@ footer p {
     margin: 5px 0;
 }
 
-/* --- MEDIA QUERIES (Adaptation mobile) --- */
+/* ======================================================= */
+/* --- MEDIA QUERIES (Adaptation mobile et tablette) --- */
+/* ======================================================= */
+
 @media (max-width: 768px) {
+    
+    /* --- HEADER / NAVIGATION MOBILE --- */
     header {
-        flex-direction: column;
-        text-align: center;
+        /* Garde l'alignement pour que le logo et le bouton hamburger soient côte à côte */
+        padding: 1rem 1.5rem; 
     }
     
-    .LOGO {
-        margin-bottom: 10px;
+    .menu-toggle {
+        display: block; /* Affiche le bouton Hamburger sur mobile */
+    }
+
+    nav {
+        /* Le menu prend toute la largeur et se positionne juste en dessous du header */
+        position: absolute;
+        top: 100%; 
+        left: 0;
+        width: 100%;
+        background-color: #1C3B7F;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        display: none; /* CACHE le menu par défaut */
+        z-index: 900; /* Assure qu'il est au-dessus du contenu */
+    }
+
+    nav.active {
+        display: block; /* AFFICHE le menu lorsque la classe 'active' est ajoutée par JS */
     }
 
     nav ul {
-        flex-direction: column;
-        gap: 0;
-        margin-top: 10px;
+        flex-direction: column; /* Empile les liens verticalement */
     }
 
     nav ul li {
-        margin: 5px 0;
+        margin: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-
-    .card-container {
-        flex-direction: column;
-        align-items: center;
+    
+    nav ul li a {
+        padding: 15px 20px; /* Plus grand pour le doigt */
+        text-align: right;
+    }
+    
+    /* --- SECTION HERO --- */
+    .hero {
+        min-height: 40vh; /* Réduit la hauteur sur mobile */
     }
     
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Réduit la taille du titre */
+        padding: 0 10px;
     }
-}
 
-/*<------------------------------------------>*/
-
-/* Styles par défaut (pour les grands écrans/ordinateurs de bureau) */
-.menu {
-    width: 800px;
-    float: left;
-}
-
-/* --- RÈGLE POUR LES ÉCRANS MOINS LARGES QUE 768px (Tablettes/Mobiles) --- */
-@media screen and (max-width: 768px) {
-    /* Cache le menu standard et affiche le bouton du "hamburger" */
-    .menu {
-        display: none;
-    }
-    .hamburger-icon {
-        display: block;
+    .hero p {
+        font-size: 1rem;
     }
     
-    /* Le conteneur principal prend toute la largeur */
-    .container {
-        width: 100%;
-        padding: 0 15px;
+    /* --- CARTES ET NIVEAUX --- */
+    .card-container, #niveaux ul {
+        flex-direction: column; /* Empile les cartes et les niveaux */
+        align-items: center;
     }
-}
 
-/* --- RÈGLE SPÉCIFIQUE POUR LES TRÈS PETITS ÉCRANS (< 600px) --- */
-@media screen and (max-width: 600px) {
-    /* Réduit la taille de la police pour améliorer la lisibilité */
-    h1 {
-        font-size: 24px;
+    .card {
+        max-width: 90%; /* Prend plus de place sur mobile */
+        margin-bottom: 20px;
+    }
+
+    #niveaux ul li {
+        max-width: 90%;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* --- FORMULAIRE --- */
+    #contact form {
+        margin: 0 10px;
     }
 }

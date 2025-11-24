@@ -2,14 +2,11 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ABC SCHOOL INTERNATIONNAL</title>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <script src="scripts/script,js"></script>
+    <script src="scripts/script.js" defer></script>
 </head>
 <body>
 
@@ -22,7 +19,11 @@
             </div>
         </div>
         
-        <nav>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        
+        <nav id="mainNav">
             <ul>
                 <li><a href="#accueil"><i class="fa-solid fa-house"></i>Accueil</a></li>
                 <li><a href="#presentation"><i class="fa-solid fa-circle-info"></i>Présentation</a></li>
@@ -32,13 +33,14 @@
             </ul>
         </nav>
     </header>
+    
     <div class="marquee-container">
         <p class="marquee-text">
-        Salut! Nous vous souhaitons la cordiale Bienvenue sur la plateforme
-         de ABC SCHOOL INTERNATIONNAL. Rassurez-vous car nous mettons à 
-         votre disposition des services non seulement <strong>ACADEMIQUES</strong>
-          mais aussi <strong>ARTISTIQUES</strong> et <strong>SPORTIFES</strong>, dans toutes
-             mésures de vous satisfaire. 
+            Salut! Nous vous souhaitons la cordiale Bienvenue sur la plateforme
+            de ABC SCHOOL INTERNATIONNAL. Rassurez-vous car nous mettons à 
+            votre disposition des services non seulement <strong>ACADEMIQUES</strong>
+            mais aussi <strong>ARTISTIQUES</strong> et <strong>SPORTIFES</strong>, dans toutes
+            mésures de vous satisfaire. 
         </p>
     </div>
     
@@ -63,13 +65,10 @@
                 <div class="mySlides fade">
                     <img src="images/eleves3.jpg" alt="Salle de classe">
                 </div>
-                <div class="hero">
-                    <div class="hero-content">
-                        <h1>Bienvenue à ABC SCHOOL INTERNATIONNAL!</h1>
-                        <p>Rigueur, travail, réussite.</p>
-                        <a href="form-inscription1.html" class="btn">Inscrivez-vous maintenant</a>
-                        
-                    </div>
+                <div class="hero-content">
+                    <h1>Bienvenue à ABC SCHOOL INTERNATIONNAL!</h1>
+                    <p>Former l'élite de demain, de la maternelle au lycée.</p>
+                    <a href="form-inscription1.html" class="btn">Inscrivez-vous maintenant</a>
                 </div>
             </div>
         </section>
@@ -79,17 +78,17 @@
             <div class="card-container">
                 <div class="card">
                     <h3>🎓 Éducation de Qualité</h3>
-                    <img class="card-img" src="images/batiment.jpg" alt="">
+                    <img class="card-img" src="images/batiment.jpg" alt="Éducation">
                     <p>Un programme complet et des enseignants dévoués.</p>
                 </div>
                 <div class="card">
                     <h3>🤝 Environnement Bienveillant</h3>
-                    <img class="card-img" src="images/batiment.jpg" alt="">
+                    <img class="card-img" src="images/batiment.jpg" alt="Bienveillance">
                     <p>Un cadre sécurisé et stimulant pour l'épanouissement.</p>
                 </div>
                 <div class="card">
                     <h3>🌐 Ouverture sur le Monde</h3>
-                    <img class="card-img" src="images/batiment.jpg" alt="">
+                    <img class="card-img" src="images/batiment.jpg" alt="Ouverture">
                     <p>Activités parascolaires et apprentissage des langues.</p>
                 </div>
             </div>
@@ -98,10 +97,10 @@
         <section id="niveaux" class="alt-bg">
             <h2>Nos Cycles d'Enseignement</h2>
             <ul>
-                <a href="#maternelle"><img class="cycle-img" src="images/eleves1.jpg" alt=""><li>Maternelle (3 à 5 ans)</li></a>
-                <a href="#primaire"><img class="cycle-img" src="images/eleves3.jpg" alt=""><li>Primaire (CP au CM2)</li></a>
-                <a href="#secondaire"><img class="cycle-img" src="images/eleves2.jpg" alt=""><li>Secondaire/Collège <br> (6<sup>e</sup>-3<sup>e</sup>)</li></a>
-                <a href="#lycee"><img class="cycle-img" src="images/batiment.jpg" alt=""><li>Lycée (2<sup>nde</sup>-Tle)</li></a>
+                <li><a href="#maternelle"><img class="cycle-img" src="images/eleves1.jpg" alt="Maternelle">Maternelle (3 à 5 ans)</a></li>
+                <li><a href="#primaire"><img class="cycle-img" src="images/eleves3.jpg" alt="Primaire">Primaire (CP au CM2)</a></li>
+                <li><a href="#secondaire"><img class="cycle-img" src="images/eleves2.jpg" alt="Secondaire">Secondaire/Collège <br> (6<sup>e</sup>-3<sup>e</sup>)</a></li>
+                <li><a href="#lycee"><img class="cycle-img" src="images/batiment.jpg" alt="Lycée">Lycée (2<sup>nde</sup>-Tle)</a></li>
             </ul>
         </section>
 
@@ -122,6 +121,38 @@
         </section>
 
     </main>
+
+            
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+    // Référence aux éléments
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    if (menuToggle && mainNav) {
+        // 1. Gérer l'ouverture/fermeture du menu au clic du bouton
+        menuToggle.addEventListener('click', function() {
+            // Ajoute/retire la classe 'active' sur la balise <nav>
+            mainNav.classList.toggle('active');
+        });
+
+        // 2. Gérer la fermeture du menu lorsque l'utilisateur clique sur un lien (pour un menu ancré)
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                // Fermer le menu si la classe 'active' est présente (sur mobile)
+                if (mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                }
+            });
+        });
+    }
+    
+    // Ajoutez ici la fonction pour le diaporama (slideshow) si vous en avez une
+    
+});
+                </script>
+
 
     <footer>
         <p><i class="fa-solid fa-location-dot"></i> Rue 32 de Bobo-Dioulasso | <i class="fa-solid fa-phone"></i> +226 65 39 55 14</p>
