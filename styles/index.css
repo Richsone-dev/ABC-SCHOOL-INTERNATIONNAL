@@ -148,28 +148,34 @@ h1, h2{
 }
 
 /* --- SECTION HERO (Accueil) et DIAPORAMA --- */
+/* --- SECTION HERO (Accueil) --- */
 .hero {
     min-height: 500px; 
     position: relative; 
     overflow: hidden;
-    color: #1C3B7F;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0;
+    color: #f4f4f9;
+    
+    /* PROPRIÉTÉS CLÉS POUR LE CENTRAGE: */
+    display: flex; /* 1. Active le modèle Flexbox */
+    justify-content: center; /* 2. Centre horizontalement le contenu */
+    align-items: center; /* 3. Centre verticalement le contenu */
+    
 }
 
+/* Contenu du Hero (texte et bouton) */
 .hero-content {
     z-index: 20; 
-    position: absolute; /* Rendu absolu pour flotter au-dessus du diaporama */
-    /* Styles du bloc de texte */
-    padding: 30px;
+    
+    /* PROPRIÉTÉS CLÉS POUR LE CENTRAGE: */
+    /* Le positionnement absolu n'est plus nécessaire si l'élément est un enfant direct du conteneur Flex */
+    position: relative; /* Utiliser relative pour qu'il soit traité par Flexbox (ou le supprimer si vous le gardez absolu) */
+    
+    /* Le reste de vos styles... */
+    padding: 20px;
+    margin-bottom: 10px;
     max-width: 800px;
-    border-radius: 10px;
-    text-shadow: #1C3B7F 2px 2px 2px;
-    color: #ffff;
-    margin-left: auto;
-    margin-right: auto;
+    margin-top: 0px;
+    /* ... */
 }
 
 .hero-content h1 {
