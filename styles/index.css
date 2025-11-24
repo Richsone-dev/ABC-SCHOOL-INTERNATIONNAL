@@ -184,7 +184,7 @@ h1, h2{
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1rem;
     margin-bottom: 30px;
 }
 
@@ -192,10 +192,9 @@ h1, h2{
     display: inline-block;
     background-color: #007acc; 
     color: white;
-    padding: 10px 20px;
+    padding: 2px;
     text-decoration: none;
     border-radius: 5px;
-    font-weight: bold;
     transition: background-color 0.3s ease, transform 0.3s ease;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -269,7 +268,7 @@ h1, h2{
 }
 
 .card h3 {
-    color: #ccc;
+    color: #1C3B7F;
 }
 
 .cycle-img{
@@ -284,6 +283,7 @@ h1, h2{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
+
 .cycle-img:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transform: translateY(-5px);
@@ -307,14 +307,16 @@ h1, h2{
     font-weight: bold;
     transition: all 0.3s ease-in-out; 
     position: relative;
-    background-color: #e6f0ff;
 }
 
 #niveaux a {
     text-decoration: none;
-    color: #ffff;
+    color: #1C3B7F;
     display: block;
     padding: 10px 20px;
+}
+#niveaux a:hover{
+    color: white;
 }
 
 #niveaux ul li:hover {
