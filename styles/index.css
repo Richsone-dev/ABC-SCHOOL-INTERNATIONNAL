@@ -87,7 +87,6 @@ nav ul li a {
     text-decoration: none;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    border-bottom: 2px solid #007acc;
     transition: border-bottom 0.3s;
     display: block;
 }
