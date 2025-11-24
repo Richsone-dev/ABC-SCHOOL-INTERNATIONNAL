@@ -152,7 +152,7 @@ section {
     background-color: #e6f0ff; 
 }
 
-h1, h2 {
+h1, h2{
     /* Suppression du color: #ffffff; global. Le H1 sera blanc dans la section hero uniquement. */
     color: #1C3B7F; /* Couleur standard pour les titres en dehors du Hero */
     margin-bottom: 20px;
@@ -289,20 +289,18 @@ h1, h2 {
 .card-img{
     background-color: white;
     display: grid;
-    align-items: center;
-    justify-content: center;
     margin-left: -20px;
-    padding: 10px;
+    padding: 2px;
     border-radius: 8px;
     max-width: 250px;
     text-align: left;
-    transition: transform 0.5s ease; /* Ajout d'une transition pour le survol */
-    transition: max-width 0.5s ease-in-out;
+    /*transition: transform 0.5s ease; /* Ajout d'une transition pour le survol */
+    transition: max-width 0.5s ease-in-out;*/
 }
 .card-img:hover {
     max-width: 400px;
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transform: translateY(-5px); /* Légère élévation au survol */
+    /*transform: translateY(-5px); /* Légère élévation au survol */
 }
 
 .card h3 {
@@ -374,6 +372,12 @@ h1, h2 {
 
 
 /* --- FORMULAIRE DE CONTACT --- */
+form h3{
+    /* Suppression du color: #ffffff; global. Le H1 sera blanc dans la section hero uniquement. */
+    color: #007acc; /* Couleur standard pour les titres en dehors du Hero */
+    margin-bottom: 20px;
+    text-align: center;
+}
 #contact form {
     max-width: 600px;
     margin: 0 auto;
@@ -449,5 +453,38 @@ footer p {
     
     .hero-content h1 {
         font-size: 2rem;
+    }
+}
+
+/*<------------------------------------------>*/
+
+/* Styles par défaut (pour les grands écrans/ordinateurs de bureau) */
+.menu {
+    width: 800px;
+    float: left;
+}
+
+/* --- RÈGLE POUR LES ÉCRANS MOINS LARGES QUE 768px (Tablettes/Mobiles) --- */
+@media screen and (max-width: 768px) {
+    /* Cache le menu standard et affiche le bouton du "hamburger" */
+    .menu {
+        display: none;
+    }
+    .hamburger-icon {
+        display: block;
+    }
+    
+    /* Le conteneur principal prend toute la largeur */
+    .container {
+        width: 100%;
+        padding: 0 15px;
+    }
+}
+
+/* --- RÈGLE SPÉCIFIQUE POUR LES TRÈS PETITS ÉCRANS (< 600px) --- */
+@media screen and (max-width: 600px) {
+    /* Réduit la taille de la police pour améliorer la lisibilité */
+    h1 {
+        font-size: 24px;
     }
 }

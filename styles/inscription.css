@@ -1,0 +1,51 @@
+form img{
+    width: 90px;
+    height: 90px;
+    background-color: #f4f4f9;
+    border-radius: 50%;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto; /* 2. Marge gauche automatique */
+    margin-right: auto; /* 3. Marge droite automatique */
+}
+
+#cycle {
+    /* Largeur et Hauteur */
+    width: 40%; /* S'assurer qu'il prend toute la largeur du conteneur */
+    padding: 8px; /* Espace intérieur */
+    height: 40px;
+
+    /* Typographie */
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+
+    /* Bordures et Couleurs */
+    border: 1px solid #ccc; /* Bordure simple */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #f9f9f9; /* Couleur de fond */
+}
+
+/* Changer l'apparence au survol ou au focus */
+#cycle:hover {
+    border-color: lch(49.94% 84.26 290.96); /* Une couleur qui correspond au bouton "Envoyer" par exemple */
+}
+
+#cycle:focus {
+    outline: none; /* Supprimer la bordure de focus par défaut du navigateur */
+    border-color: ;
+    box-shadow: 0 0 5px lch(49.94% 84.26 290.96); /* Ajouter une ombre pour le focus */
+}
+
+/* Style pour chaque option personnalisée (ex: une balise <li>) */
+.custom-option {
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Changement de couleur au survol ! (Ceci fonctionne car ce n'est pas un <option> natif) */
+.custom-option:hover {
+    background-color: #5cb85c; /* La couleur que vous souhaitez */
+    color: white; /* Pour que le texte reste lisible */
+}
