@@ -55,7 +55,7 @@ header {
 .logo-container span {
     text-align: center;
     font-size: 10px;
-    letter-spacing: 10px; /* Amélioré */
+    letter-spacing: 8px; /* Amélioré */
 }
 
 .logo {
