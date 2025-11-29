@@ -68,8 +68,20 @@ header {
     display: none;
     font-size: 1rem;
     cursor: pointer;
-    padding: 2px 2px;
+    color: #1C3B7F;
+    border-radius: 2px;
+    box-shadow: #333 2px;
+    background-color: white;
+    width: 20px;
+    height: 20px;
 }
+.menu-toggle i{
+    margin-left: 4px;
+    margin-bottom: 4px;
+    margin-right: 4px;
+    margin-top: 4px;
+
+}*/
 
 nav ul {
     list-style: none;
