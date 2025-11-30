@@ -421,6 +421,10 @@ footer p {
         display: none; /* CACHE le menu par défaut */
         z-index: 900; /* Assure qu'il est au-dessus du contenu */
     }
+    .LOGO img{
+        max-width: 50px;
+        max-height: 50px;
+    }
 
     nav.active {
         display: block; /* AFFICHE le menu lorsque la classe 'active' est ajoutée par JS */
@@ -446,7 +450,7 @@ footer p {
     }
     
     .hero-content h1 {
-        font-size: 1.4rem; /* Réduit la taille du titre */
+        font-size: 1rem; /* Réduit la taille du titre */
         padding: 0 8px;
     }
     .hero-content{
@@ -454,7 +458,7 @@ footer p {
     }
 
     .hero p {
-        font-size: 1rem;
+        font-size: 0.5rem;
     }
     
     /* --- CARTES ET NIVEAUX --- */
