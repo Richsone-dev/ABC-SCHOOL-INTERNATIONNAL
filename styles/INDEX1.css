@@ -446,7 +446,7 @@ footer p {
     
     /* --- SECTION HERO --- */
     .hero {
-        min-height: 40vh; /* Réduit la hauteur sur mobile */
+        min-height: 30vh; /* Réduit la hauteur sur mobile */
     }
     
     .hero-content h1 {
