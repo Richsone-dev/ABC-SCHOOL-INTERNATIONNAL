@@ -130,7 +130,7 @@ nav ul li a:active {
     overflow: hidden; 
     white-space: nowrap; 
     padding: 10px 0;
-    font-size: 14px; /* Augmenté légèrement pour la lisibilité */
+    font-size: 12px; /* Augmenté légèrement pour la lisibilité */
     height: 40px;
     background-color: #ffff;
     color: black;
@@ -450,8 +450,8 @@ footer p {
     }
     
     .hero-content h1 {
-        font-size: 1rem; /* Réduit la taille du titre */
-        padding: 0 8px;
+        font-size: 0.8rem; /* Réduit la taille du titre */
+        padding: 0 5px;
     }
     .hero-content{
         
