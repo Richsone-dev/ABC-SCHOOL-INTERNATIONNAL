@@ -11,31 +11,80 @@
 </head>
 <body>
 
-<section id="contact">
-            <h2>INSCRIPTION</h2>
-            <form action="#" method="POST">
-                <img src="images/LOGO ABC.png" alt="">
-                <h3>INFORMATIONS DE CYCLE</h3>
-                <label for="cyle">Cycle:</label>
-                <select name="cycle" id="cycle" required>
-                    <option value="" disable delected hidden>Choisir votre cycle</option>
-                    <option value="Maternelle">Maternelle</option>
-                    <option value="Poste primaire">Poste primaire</option>
-                    <option value="Poste Secondaire">Poste Secondaire(6 <sup>ème</sup>- 3<sup>ème</sup>)</option>
-                    <option value="Lycée">Lycée(2<sup>nde</sup> - T<sup>le</sup>)</option>
-                </select>
-                <label for="nom">Nom Complet :</label>
-                <input type="text" id="nom" name="nom"  placeholder="Nom Prénom">
+    <h2>INSCRIPTION</h2>
+    <form action="#" method="POST">
+        <img src="images/LOGO ABC.png" alt="">
+<section id="INFO-CYCLE-PERSO">
+        <h3>INFORMATIONS DE CYCLE</h3>
+                <div class="classes">
+                    <label for="cyle">Cycle:<span class="oblig">*</span></label>
+                    <select name="cycle" id="cycle" required>
+                        <option value="" disable delected hidden>Choisir votre cycle</option>
+                        <option value="Maternelle">Maternelle</option>
+                        <option value="Poste primaire">Poste primaire</option>
+                        <option value="Poste Secondaire">Poste Secondaire(6 <sup>ème</sup>- 3<sup>ème</sup>)</option>
+                        <option value="Lycée">Lycée(2<sup>nde</sup> - T<sup>le</sup>)</option>
+                    </select>
+                </div>
 
-                <label for="email">E-mail :</label>
+                <div class="classes">
+                    <div id="lasse-primaire">
+                        <label for="classe-primaire">Classe Poste primaire:<span class="oblig">*</span></label>
+                        <select name="lasse-primaire" required>
+                            <option value="" disable delected hidden>Choisir votre classe</option>
+                            <option value="CP1">CP1</option>
+                            <option value="CP2">CP2</option>
+                            <option value="CE1">CE1</option>
+                            <option value="CE2">CE2</option>
+                            <option value="CM1">CM1</option>
+                            <option value="CM2">CM2</option>
+                        </select>
+                    </div>
+
+                    <div id="classes">
+                        <label for="classe-secondaire">Classe-secondaire<span class="oblig">*</span></label>
+                        <select name="classe-secondaire" required>
+                            <option value="" disable delected hidden>Choisir votre classe</option>
+                            <option value="6e">6e</option>
+                            <option value="5e">5e</option>
+                            <option value="4e">4e</option>
+                            <option value="3e">3e</option>
+                        </select>
+                    </div>
+
+                    <div id="classes">
+                        <label for="classe-lycée">Classe:<span class="oblig">*</span></label>
+                        <select name="classe" required>
+                            <option value="" disable delected hidden>Choisir votre classe</option>
+                            <option value="2nde">2nde A</option>
+                            <option value="2nde">2nde C</option>
+                            <option value="1ère">1ère A</option>
+                            <option value="1ère">1ère D</option>
+                            <option value="Tle">Tle A</option>
+                            <option value="1ère">Tle D</option>
+                        </select>
+                    </div>
+                </div>
+        <div>
+</section>
+<section class="INFO-CYCLE-PERSO">
+     <label for="nom">Nom:<span class="oblig">*</span></label>
+                <input type="name" id="nom" name="nom"  placeholder="votre nom">
+                <label for="nom">Prénom:<span class="oblig">*</span></label>
+                <input type="name" id="prénom" name="prénom"  placeholder="votre prénom">
+
+                <label for="">E-mail:<span class="oblig">*</span></label>
                 <input type="email" id="email" name="email" placeholder="Votre address mail" required>
 
-                <label for="message">Message :</label>
+                <label for="message">Message :<span class="oblig">*</span></label>
                 <textarea id="message" name="message" rows="4" placeholder="votre message"></textarea>
 
                 <button type="submit" class="btn">Envoyer</button>
             </form>
         </section>
+</section>
+            <a href="index.html" class="btn" >Retour page d'Accueil</a>
+        </div>
         <footer>
         <p><i class="fa-solid fa-location-dot"></i> Rue 32 de Bobo-Dioulasso | <i class="fa-solid fa-phone"></i> +226 65 39 55 14</p>
         <p>&copy; 2025 ABC SCHOOL INTERNATIONNAL. Tous droits réservés.</p>
