@@ -53,6 +53,8 @@ header {
 }
 
 .logo-container span {
+    display: block;
+    font-weight: lighter;
     text-align: center;
     font-size: 10px;
     letter-spacing: 8px; /* Amélioré */
@@ -88,7 +90,7 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 
 nav ul li {
@@ -113,6 +115,14 @@ nav ul li a:hover {
     background-color: #007acc;
     transition: background-color 0.4s ease-in-out;
 }
+nav ul li a:focus {
+    background-color: #f08205;
+}
+nav ul li a:active {
+    color: #333;
+}
+
+
 
 /* --- NOUVEAUX STYLES MARQUEE --- */
 .marquee-container {
@@ -180,13 +190,10 @@ h1, h2{
     /* PROPRIÉTÉS CLÉS POUR LE CENTRAGE: */
     /* Le positionnement absolu n'est plus nécessaire si l'élément est un enfant direct du conteneur Flex */
     position: relative; /* Utiliser relative pour qu'il soit traité par Flexbox (ou le supprimer si vous le gardez absolu) */
-    
+    align-items: center;
+    justify-content: center;
     /* Le reste de vos styles... */
-    padding: 20px;
-    margin-bottom: 10px;
-    max-width: 800px;
-    margin-top: 0px;
-    /* ... */
+    padding: 50px;
 }
 
 .hero-content h1 {
@@ -264,12 +271,13 @@ h1, h2{
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 300px; /* Augmenté légèrement */
+    max-width: 250px; /* Augmenté légèrement */
     text-align: left;
     transition: transform 0.3s ease;
 }
 
 .card:hover {
+    max-width: 300px;
     transform: translateY(-5px);
 }
 
@@ -438,8 +446,11 @@ footer p {
     }
     
     .hero-content h1 {
-        font-size: 1.8rem; /* Réduit la taille du titre */
-        padding: 0 10px;
+        font-size: 1.4rem; /* Réduit la taille du titre */
+        padding: 0 8px;
+    }
+    .hero-content{
+        
     }
 
     .hero p {
@@ -453,8 +464,9 @@ footer p {
     }
 
     .card {
-        max-width: 90%; /* Prend plus de place sur mobile */
+        max-width: 50%; /* Prend plus de place sur mobile */
         margin-bottom: 20px;
+        transition: transform 0.3s ease;
     }
 
     #niveaux ul li {
