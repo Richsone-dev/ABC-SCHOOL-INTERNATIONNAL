@@ -434,6 +434,14 @@ footer p {
         flex-direction: column; /* Empile les liens verticalement */
     }
 
+    .logo{
+        font-size: 0.8rem;
+    }
+    .logo-container span{
+        font-size: 6px;
+        
+    }
+
     nav ul li {
         margin: 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -446,11 +454,11 @@ footer p {
     
     /* --- SECTION HERO --- */
     .hero {
-        min-height: 30vh; /* Réduit la hauteur sur mobile */
+        min-height: 40vh; /* Réduit la hauteur sur mobile */
     }
     
     .hero-content h1 {
-        font-size: 0.8rem; /* Réduit la taille du titre */
+        font-size: 1.4rem; /* Réduit la taille du titre */
         padding: 0 5px;
     }
     .hero-content{
@@ -458,7 +466,7 @@ footer p {
     }
 
     .hero p {
-        font-size: 0.5rem;
+        font-size: 1rem;
     }
     
     /* --- CARTES ET NIVEAUX --- */
