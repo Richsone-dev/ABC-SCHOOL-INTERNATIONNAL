@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menuToggle</title>
+    <link rel="stylesheet" href="menuTog.css">
+</head>
+<body>
+    <img src="images/batiment.jpg" alt="">
+    <button id="menuToggle">☰</button>
+
+<nav id="mainNav">
+    <ul>
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Services</a></li>
+    </ul>
+</nav>
+<script>
+    // Assurez-vous que les variables sont correctement définies avant ce bloc
+const menuToggle = document.getElementById('menuToggle');
+const mainNav = document.getElementById('mainNav');
+
+if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', function() {
+        // Ajoute 'active' pour faire glisser le menu DANS l'écran
+        mainNav.classList.toggle('active');
+    });
+}
+</script>
+</body>
+</html>
