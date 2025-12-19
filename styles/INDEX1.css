@@ -74,7 +74,7 @@ header {
     color: #1C3B7F;
     border-radius: 2px;
     box-shadow: #333 2px;
-    background-color: white;
+    /*background-color: white;*/
     width: 30px;
     height: 30px;
 }
@@ -510,8 +510,8 @@ footer p {
 
 .hamburger {
     cursor: pointer;
-    width: 30px;
-    height: 25px;
+    width: 25px;
+    height: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -519,13 +519,13 @@ footer p {
 
 .line {
     display: block;
-    height: 3px;
+    height: 2px;
     width: 80%;
-    background-color: #1C3B7F; /* Couleur de vos barres */
+    background-color: #ffffff; /* Couleur de vos barres */
     border-radius: 10px;
     transition: all 0.3s ease-in-out;
-    margin-top: 3px;
-    margin-left: 3px;
+    margin-top: 2px;
+    margin-left: 2px;
 }
 
 /* --- LOGIQUE DE TRANSFORMATION EN CROIX --- */
@@ -538,10 +538,10 @@ footer p {
 
 /* 2. Incliner la ligne du haut à 45° */
 .menu-toggle input:checked + .hamburger .line:nth-child(1) {
-    transform: translateY(10.5px) rotate(45deg);
+    transform: translateY(8px) rotate(45deg);
 }
 
 /* 3. Incliner la ligne du bas à -45° */
 .menu-toggle input:checked + .hamburger .line:nth-child(3) {
-    transform: translateY(-10.5px) rotate(-45deg);
+    transform: translateY(-8px) rotate(-45deg);
 }
