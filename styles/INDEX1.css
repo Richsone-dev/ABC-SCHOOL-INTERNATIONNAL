@@ -66,18 +66,7 @@ header {
 }
 
 /* Bouton Hamburger (caché sur PC) */
-.menu-toggle {
-    position: relative;
-    display: none;
-    font-size: 1rem;
-    cursor: pointer;
-    color: #1C3B7F;
-    border-radius: 2px;
-    box-shadow: #333 2px;
-    /*background-color: white;*/
-    width: 30px;
-    height: 30px;
-}
+.
 /*.menu-toggle i{
     margin-left: 4px;
     margin-bottom: 4px;
@@ -418,9 +407,9 @@ footer p {
         position: fixed; 
         top: 0;
         right: 0; 
-        width: 200px; 
-        height: 60%; 
-        background-color: #333;
+        width: 150px; 
+        height: 40%; 
+        background-color: #004d99;
         color: white;
         z-index: 1000;
         border-radius: 10px 0 0 10px;
@@ -430,7 +419,7 @@ footer p {
         flex-direction: column;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
-        padding-top: 80px; /* Espace pour ne pas chevaucher le bouton */
+        padding-top: 20px; /* Espace pour ne pas chevaucher le bouton */
         box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
     }
 
@@ -452,7 +441,7 @@ footer p {
     
     #mainNav ul li a {
         display: block;
-        padding: 15px 20px;
+        /*padding: 15px 20px;*/
         color: white;
         text-decoration: none;
         text-align: left; /* Aligne le texte des liens à droite */
