@@ -398,8 +398,6 @@ footer p {
     }
     
     .menu-toggle {
-        padding-right: -5px;
-        padding-top: -5px;
         display: block; /* Affiche le bouton Hamburger */
         z-index: 1001;  /* Doit être au-dessus du menu */
     }
