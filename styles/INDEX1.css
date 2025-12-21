@@ -398,6 +398,8 @@ footer p {
     }
     
     .menu-toggle {
+        padding-right: -5px;
+        padding-top: -5px;
         display: block; /* Affiche le bouton Hamburger */
         z-index: 1001;  /* Doit être au-dessus du menu */
     }
@@ -405,10 +407,10 @@ footer p {
     #mainNav {
         /* Fixe le menu à droite et prend toute la hauteur */
         position: fixed; 
-        top: 0;
-        right: 0; 
-        width: 150px; 
-        height: 40%; 
+        top: 10px;
+        right: 0px; 
+        width: 160px; 
+        height: 45%; 
         background-color: #004d99;
         color: white;
         z-index: 1000;
@@ -419,7 +421,7 @@ footer p {
         flex-direction: column;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
-        padding-top: 20px; /* Espace pour ne pas chevaucher le bouton */
+        padding-top: 50px; /* Espace pour ne pas chevaucher le bouton */
         box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
     }
 
