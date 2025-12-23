@@ -370,6 +370,8 @@ footer {
     text-align: center;
     padding: 20px;
     font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
 }
 
 footer p {
@@ -391,14 +393,22 @@ footer p {
     display: block;
 }
 
+.lien-foot ul{
+    list-style: none;
+    text-decoration: none;
+}
+.lien-foot a{
+    text-decoration: none;
+    color: #f4f4f9;
+    display: flex;
+    margin: auto;
+}
+
 /* ======================================================= */
 /* --- MEDIA QUERIES (Adaptation mobile et tablette) --- */
 /* ======================================================= */
 @media (max-width: 768px) {
 
-    .LOGO{
-        width: 60%;
-}
 
     /* --- HEADER / NAVIGATION MOBILE --- */
     header {
@@ -474,7 +484,7 @@ footer p {
     }
     
     .hero-content h1 {
-        font-size: 1.4rem;
+        font-size: 1rem;
         padding: 0 5px;
     }
     

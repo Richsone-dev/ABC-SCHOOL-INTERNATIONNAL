@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles/style.css"/>
+    <title>Formulaire d'Inscription</title>
+</head>
+<body>
+    <form action="traitement.php" method="post" id="inscriptionForm">
+        
+        <h3 style="text-align:center"><i class="fa-solid fa-user"></i>IDENTITÉS PERSONNELLES</h3>
+        <span class="averti"><i class="fa-solid fa-circle-xmark"></i>Veuillez remplir tous les champs s'il vous plait.</span>
+        <div class="Id_perso" id="Id_perso">
+            <div class="nom-prenom">
+                <div class="nom">
+                    <label for="inputNom">Nom: <span class="oblig">*</span></label>
+                    <input type="text" id="inputNom" name="nom" placeholder="Nom" required>
+                </div>
+                <div class="prenom">
+                    <label for="inputPrenom">Prénom: <span class="oblig">*</span></label>
+                    <input type="text" id="inputPrenom" name="prenom" placeholder="Prénom" required>
+                </div>
+            </div>
+            
+            <label for="dateNaissance">Date de naissance: <span class="oblig" style="color:red">*</span></label>
+            <div class="Date" id="dateNaissance">
+                <div class="Jour">
+                    <span class="dateL">Jour</span>
+                    <select name="jour_naissance" required>
+                        <option value="" disabled selected style="color: gray">-</option>
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+                        <option value="07">07</option>
+                        <option value="08">08</option>
+                        <option value="09">09</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                        <option value="13">13</option>
+                        <option value="14">14</option>
+                        <option value="15">15</option>
+                        <option value="16">16</option>
+                        <option value="17">17</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                        <option value="26">26</option>
+                        <option value="27">27</option>
+                        <option value="28">28</option>
+                        <option value="29">29</option>
+                        <option value="30">30</option>
+                        <option value="31">31</option>
+                    </select>
+                </div>
+                
+                <div class="Mois">
+                    <span class="dateL">Mois:</span>
+                    <select name="mois_naissance" required>
+                      <option value="" disabled selected>-</option>
+                      <option value="Janvier">Janvier</option>
+                      <option value="Février">Février</option>
+                        <option value="Mars">Mars</option>
+                        <option value="Avril">Avril</option>
+                        <option value="Mai">Mai</option>
+                        <option value="Juin">Juin</option>
+                        <option value="Juillet">Juillet</option>
+                        <option value="Août">Août</option>
+                        <option value="Septembre">Septembre</option>
+                        <option value="Octobre">Octobre</option>
+                        <option value="Novembre">Novembre</option>
+                        <option value="Decembre">Decembre</option>
+                    </select>
+                </div>
+                <div class="Annees">
+                    <span class="dateL">Année:</span>
+                    <select name="annee_naissance" required>
+                        <option value="" disabled selected style="color: gray">-</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                        <option value="2002">2002</option>
+                        <option value="2001">2001</option>
+                        <option value="2000">2000</option>
+                        <option value="1999">1999</option>
+                        <option value="1998">1998</option>
+                        <option value="1997">1997</option>
+                        <option value="1996">1996</option>
+                        <option value="1995">1995</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <div class="cycle-classe">
+            <h3 style=" text-align: center">CYCLE ET CLASSE</h3>
+            <div class="cycle">
+              <label for="selectCycle">CYCLE :</label>
+              <select id="selectCycle" name="cycle" required> 
+                  <option value="" disabled selected>-</option>
+                  <option value="maternelle">Maternelle</option>
+                  <option value="primaire">Primaire</option>
+                  <option value="secondaire">Secondaire</option>
+                  <option value="lycee">Lycée</option>
+              </select>
+            </div>
+            
+            <div id="classe-M" style="display: none">
+                <h3 style="text-align: center">MATERNELLE</h3>
+                <label for="selectClasseM">CLASSE :</label>
+                <select id="selectClasseM" name="classe_maternelle">
+                    <option value="" disabled selected>-</option>
+                    <option value="petite section">Petite section</option>
+                    <option value="Moyenne section">Moyenne section</option>
+                    <option value="Grande section">Grande section</option>
+                </select>
+            </div>
+            
+            <div id="classe-P" style="display: none">
+                <h3 style="text-align: center">POSTE PRIMAIRE</h3>
+                <label for="selectClasseP">CLASSE :</label>
+                <select id="selectClasseP" name="classe_primaire">
+                    <option value="" disabled selected>-</option>
+                    <option value="CP1">CP1</option>
+                    <option value="CP2">CP2</option>
+                    <option value="CE1">CE1</option>
+                    <option value="CE2">CE2</option>
+                    <option value="CM1">CM1</option>
+                    <option value="CM2">CM2</option>
+                </select>
+            </div>
+            
+            <div id="classe-S" style="display: none">
+                <h3 style="text-align: center">SECOND CYCLE</h3>
+                <label for="selectClasseS">CLASSE :</label>
+                <select id="selectClasseS" name="classe_secondaire">
+                    <option value="" disabled selected>-</option>
+                    <option value="6ème">6ème</option>
+                    <option value="5ème">5ème</option>
+                    <option value="4ème">4ème</option>
+                    <option value="3ème">3ème</option>
+                </select>
+            </div>
+            
+            <div id="classe-L" style="display: none">
+                <h3 style="text-align: center">LYCÉE</h3>
+                <label for="selectClasseL">CLASSE :</label>
+                <select id="selectClasseL" name="classe_lycee">
+                    <option value="" disabled selected>-</option>
+                    <option value="2nde A">2nde A</option>
+                    <option value="2nde C">2nde C</option>
+                    <option value="1ère A">1ère A</option>
+                    <option value="1ère D">1ère D</option>
+                    <option value="Tle A">Tle A</option>
+                    <option value="Tle D">Tle D</option>
+                </select>
+            </div>
+        </div>
+        <div class="checkbox">
+          <span class="checkboxT">J'accepte les conditions.</span>
+          <input type="checkbox" id="checkbox" required>
+        </div>
+        <div class="BTN">
+          <input type="reset" value="Actualliser" class="reset">
+          <input type="submit" value="Enregistrer" class="btn">
+        </div>
+        
+        
+    </form>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        
+        // --- 1. Gestion de l'affichage des classes (Cycle) ---
+        
+        // Correction 6: Cibler le SELECT par son nouvel ID, pas le DIV parent
+        const selectCycle = document.getElementById('selectCycle'); 
+        
+        // Récupérer les conteneurs de classe spécifiques
+        const conteneurMaternelle = document.getElementById('classe-M');
+        const conteneurPrimaire = document.getElementById('classe-P');
+        const conteneurSecondaire = document.getElementById('classe-S');
+        const conteneurLycee = document.getElementById('classe-L'); 
+        
+        // Tableau des tous les conteneurs que nous devons gérer
+        const tousLesConteneurs = [
+            conteneurMaternelle, 
+            conteneurPrimaire, 
+            conteneurSecondaire, 
+            conteneurLycee
+        ];
+        
+        // Fonction utilitaire pour cacher tous les conteneurs
+        function cacherTousLesChamps() {
+            tousLesConteneurs.forEach(conteneur => {
+                // S'assurer que les conteneurs existent
+                if (conteneur) {
+                    conteneur.style.display = 'none';
+                    // Optionnel : Réinitialiser la valeur de la classe sélectionnée
+                    const innerSelect = conteneur.querySelector('select');
+                    if(innerSelect) {
+                        innerSelect.value = '';
+                    }
+                }
+            });
+        }
+        
+        // Fonction principale déclenchée au changement du cycle
+        if (selectCycle) {
+            selectCycle.addEventListener('change', function() {
+                cacherTousLesChamps(); 
+                
+                // Utiliser la valeur du select Cycle
+                const selectedValue = selectCycle.value; 
+                
+                switch (selectedValue) {
+                    case 'maternelle':
+                        if (conteneurMaternelle) conteneurMaternelle.style.display = 'block';
+                        break;
+                        
+                    case 'primaire':
+                        if (conteneurPrimaire) conteneurPrimaire.style.display = 'block';
+                        break;
+        
+                    case 'secondaire':
+                        if (conteneurSecondaire) conteneurSecondaire.style.display = 'block';
+                        break;
+                        
+                    case 'lycee': // Correspond à la nouvelle valeur sans accent
+                        if (conteneurLycee) conteneurLycee.style.display = 'block';
+                        break;
+                        
+                    default:
+                        // Si l'option par défaut est sélectionnée, tous sont cachés.
+                        break;
+                }
+            });
+        }
+
+        
+        // --- 2. Gestion de l'activation du bouton (Checkbox) ---
+        
+        const checkbox = document.getElementById("checkbox");
+        const btn = document.querySelector(".btn"); 
+        
+        // Le bouton est désactivé (grisé) par défaut au chargement de la page
+        if (btn) btn.disabled = true;
+        
+        if (checkbox && btn) {
+            checkbox.addEventListener('change', function() {
+                // Active le bouton si la case est cochée, le désactive sinon
+                btn.disabled = !checkbox.checked;
+            });
+        }
+
+        // --- 3. Gestion de l'alerte de confirmation (Sur soumission du formulaire) ---
+        
+        const form = document.getElementById('inscriptionForm');
+        if (form) {
+             form.addEventListener('submit', function(event) {
+                // Vous pouvez ajouter ici une logique de validation JavaScript supplémentaire
+                // Si la validation côté client est réussie, cette alerte s'affiche
+                alert("Données prêtes à être enregistrées ! Envoi au serveur...");
+                
+                // Si vous vouliez empêcher l'envoi au serveur après l'alerte, décommenter:
+                // event.preventDefault(); 
+            });
+        }
+    });
+    </script>
+</body>
+</html>
