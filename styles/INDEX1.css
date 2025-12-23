@@ -376,10 +376,29 @@ footer p {
     margin: 5px 0;
 }
 
+.overlay {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Voile noir transparent */
+    z-index: 998; /* Juste en dessous du menu (999 ou 1000) */
+}
+
+.overlay.active {
+    display: block;
+}
+
 /* ======================================================= */
 /* --- MEDIA QUERIES (Adaptation mobile et tablette) --- */
 /* ======================================================= */
 @media (max-width: 768px) {
+
+    .LOGO{
+        width: 60%;
+}
 
     /* --- HEADER / NAVIGATION MOBILE --- */
     header {
