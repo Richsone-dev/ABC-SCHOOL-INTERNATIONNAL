@@ -64,17 +64,9 @@ header {
     font-size: 1rem;
     font-weight: bold;
 }
-
-/* Bouton Hamburger (caché sur PC) */
-.
-/*.menu-toggle i{
-    margin-left: 4px;
-    margin-bottom: 4px;
-    margin-right: 4px;
-    margin-top: 4px;
-
-}*/
-
+.menu-toggle{
+    display: none;
+}
 nav ul {
     list-style: none;
     margin: 0;
