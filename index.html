@@ -128,44 +128,39 @@
         </section>
 
     </main>
-
-                <script>
-const menuToggle = document.getElementById('checkbox');
+<script>
+    const menuToggle = document.getElementById('checkbox');
 const mainNav = document.getElementById('mainNav');
 const overlay = document.getElementById('overlay');
 
-if (menuToggle && mainNav) {
-    // Fonction unique pour basculer l'état du menu
-    const toggleMenu = () => {
-        mainNav.classList.toggle('active');
-        if (overlay) overlay.classList.toggle('active');
+if (menuToggle && mainNav && overlay) {
+    
+    // 1. Fonction pour FERMER le menu proprement
+    const closeMenu = () => {
+        mainNav.classList.remove('active');
+        overlay.classList.remove('active');
+        menuToggle.checked = false; // <--- C'est cette ligne qui réinitialise ton bouton burger !
     };
 
-    // 1. Clic sur le bouton menu (checkbox)
-    menuToggle.addEventListener('click', toggleMenu);
-
-    // 2. Fermer le menu quand on clique sur un lien
-    document.querySelectorAll('#mainNav a').forEach(link => {
-        link.addEventListener('click', () => {
-            // On retire la classe active
-            mainNav.classList.remove('active');
-            if (overlay) overlay.classList.remove('active');
-            
-            // Optionnel : décocher la checkbox visuellement si c'est une vraie checkbox
-            if (menuToggle.type === 'checkbox') {
-                menuToggle.checked = false;
-            }
-        });
+    // 2. Clic sur le burger (Ouverture / Fermeture manuelle)
+    menuToggle.addEventListener('change', () => {
+        if (menuToggle.checked) {
+            mainNav.classList.add('active');
+            overlay.classList.add('active');
+        } else {
+            closeMenu();
+        }
     });
 
-    // 3. Fermer le menu si on clique sur l'overlay (optionnel mais recommandé)
-    if (overlay) {
-        overlay.addEventListener('click', toggleMenu);
-    }
+    // 3. Clic sur l'overlay -> on ferme tout
+    overlay.addEventListener('click', closeMenu);
+
+    // 4. Clic sur un lien -> on ferme tout
+    document.querySelectorAll('#mainNav a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
 }
-
 </script>
-
 
     <footer>
         <div class="lien-foot">
