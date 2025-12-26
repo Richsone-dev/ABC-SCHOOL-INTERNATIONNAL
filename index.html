@@ -38,6 +38,7 @@
                 <li><a href="#contact"><i class="fa-solid fa-envelope"></i>Contact</a></li>
             </ul>
         </nav>
+        <div class="overlay" id="overlay"></div>
     </header>
     
     <div class="marquee-container">
@@ -129,15 +130,38 @@
     </main>
 
                 <script>
-    // Assurez-vous que les variables sont correctement définies avant ce bloc
 const menuToggle = document.getElementById('checkbox');
 const mainNav = document.getElementById('mainNav');
+const overlay = document.getElementById('overlay');
 
 if (menuToggle && mainNav) {
-    menuToggle.addEventListener('click', function() {
-        // Ajoute 'active' pour faire glisser le menu DANS l'écran
+    // Fonction unique pour basculer l'état du menu
+    const toggleMenu = () => {
         mainNav.classList.toggle('active');
+        if (overlay) overlay.classList.toggle('active');
+    };
+
+    // 1. Clic sur le bouton menu (checkbox)
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // 2. Fermer le menu quand on clique sur un lien
+    document.querySelectorAll('#mainNav a').forEach(link => {
+        link.addEventListener('click', () => {
+            // On retire la classe active
+            mainNav.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+            
+            // Optionnel : décocher la checkbox visuellement si c'est une vraie checkbox
+            if (menuToggle.type === 'checkbox') {
+                menuToggle.checked = false;
+            }
+        });
     });
+
+    // 3. Fermer le menu si on clique sur l'overlay (optionnel mais recommandé)
+    if (overlay) {
+        overlay.addEventListener('click', toggleMenu);
+    }
 }
 
 </script>
